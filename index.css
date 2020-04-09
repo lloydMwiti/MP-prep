@@ -10,6 +10,7 @@
     transition: 0.4s ease;
     object-fit: cover;
     scroll-behavior: smooth;
+    outline: none;
 }
 html , body{
     display: flex;
@@ -44,7 +45,7 @@ html , body{
     margin-left: .3rem;
     color: #000000;
     border-radius: 1rem;
-    padding: .15rem .8rem .25rem .8rem ;
+    padding: .1rem 1rem .25rem 1rem ;
 }
 .navlinks:hover{
     background-color: #ffffff;
@@ -81,7 +82,7 @@ html , body{
     background-image: rgba(0,0,0,.7);
     z-index: 2;
     width: 100vw;
-    height: 80vh ; 
+    height: 86vh ; 
     min-height: 25rem;
     display: flex;
     padding: 0rem 2rem 3rem 2rem;
@@ -126,6 +127,11 @@ html , body{
     border-radius: 2rem;
     cursor: pointer;
 }
+.container > ul > li > button:hover{
+    background-color: rgb(2, 134, 101);
+    color: white;
+    box-shadow: 0 0 .4rem -.1rem rgb(2, 1, 104);
+}
 .topic{
     font-size: 3.5rem;
 }
@@ -153,39 +159,42 @@ html , body{
 }
 
 .next{
-    border: 1px solid #009e77;
+    border: 1px none #0b37fc;
     padding: .1rem 1rem .3rem 1rem;
     margin:2rem 1rem ;
-    color: #025f48;
+    color: #f1f1f1;
     border-radius: 5px;
+    background-color: rgb(0, 55, 173);
 }
 .l1{
     background-image: url(images/blender.jfif);
     background-size: auto 100%;
+    
 }
 .l1:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
+    
 }
 .l2{
     background-image: url(images/unity.jfif);
     background-size: auto 100%;
 }
 .l2:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
 }
 .l3{
     background-image: url(images/unreal.jfif);
     background-size: auto 100%;
 }
 .l3:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
 }
 .l4{
     background-image: url(images/flutter.png);
     background-size: auto 100%;
 }
 .l4:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
 }
 .l5{
     background-image: url(images/tensorflow.jfif);
@@ -194,15 +203,39 @@ html , body{
     text-shadow: 0 0 2px white;
 }
 .l5:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
 }
 .l6{
     background-image: url(images/gimp.jfif);
     background-size: auto 100%;
 }
 .l6:hover{
-    background-size: auto 110%;
+    background-size: auto 120%;
 }
+
+
+.infol1,.infol2,.infol3,
+.infol4,.infol5,.infol6{
+    z-index: -5;
+    width: 89vw;
+    box-shadow: 0 0 1000rem 1000rem #00000054;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    align-self: center;
+    justify-self: center;
+    top: 20vh;
+    bottom: 0;
+}
+.infol1>img,.infol2>img,.infol3>img,
+.infol4>img,.infol5>img,.infol6>img{
+    height: 60vh;
+    width: 107vh;
+
+}
+
 
 /*icons */
 .iconholster{
