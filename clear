@@ -1,0 +1,235 @@
+[1mdiff --git a/index.css b/index.css[m
+[1mindex 9bf3aed..43a560a 100644[m
+[1m--- a/index.css[m
+[1m+++ b/index.css[m
+[36m@@ -6,7 +6,7 @@[m
+     padding: 0;[m
+     margin: 0;[m
+     font-size: 1.1rem;[m
+[31m-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;[m
+[32m+[m[32m    font-family: 'Segoe UI', Tahoma, Geneva,  sans-serif;[m
+     transition: 0.4s ease;[m
+     object-fit: cover;[m
+     scroll-behavior: smooth;[m
+[36m@@ -232,11 +232,49 @@[m [mhtml , body{[m
+ .infol1>img,.infol2>img,.infol3>img,[m
+ .infol4>img,.infol5>img,.infol6>img{[m
+     height: 60vh;[m
+[31m-    width: 107vh;[m
+[31m-[m
+[32m+[m[32m    width: 90vh;[m
+[32m+[m[32m    object-fit: cover;[m
+[32m+[m[32m    object-position: center;[m
+[32m+[m[32m}[m
+[32m+[m[32m.infol1>div,.infol2>div,.infol3>div,[m
+[32m+[m[32m.infol4>div,.infol5>div,.infol6>div{[m
+[32m+[m[32m    width: 48%;[m
+[32m+[m[32m    display: flex;[m
+[32m+[m[32m    flex-direction: column;[m
+[32m+[m[32m    align-items: center;[m
+[32m+[m[32m    height: 100%;[m
+[32m+[m[32m    justify-content: center;[m
+[32m+[m[32m}[m
+[32m+[m[32m.visible{[m
+[32m+[m[32m    z-index: 13;[m
+[32m+[m[32m}[m
+[32m+[m[32m#killblender,#killunity,#killunreal,[m
+[32m+[m[32m#killflutter,#killtensor,#killgimp{[m
+[32m+[m[32m    height: 2.2rem;[m
+[32m+[m[32m    width: 2.2rem;[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m    border:1px solid #494949;[m
+[32m+[m[32m    color: #454545;[m
+[32m+[m[32m    border-radius: .2rem;[m
+[32m+[m[32m    margin: .3rem;[m
+[32m+[m[32m}[m
+[32m+[m[32m.btitile{[m
+[32m+[m[32m    align-self: flex-start;[m
+[32m+[m[32m    font-size: 2.2rem;[m
+[32m+[m[32m    margin-left: 15%;[m
+[32m+[m[32m}[m
+[32m+[m[32m.desc{[m
+[32m+[m[32m    align-self: center;[m
+[32m+[m[32m    width: 70%;[m
+[32m+[m[32m    color: #494949;[m
+[32m+[m[32m}[m
+[32m+[m[32m.download{[m
+[32m+[m[32m    padding: .1rem 2rem .3rem 2rem;[m
+[32m+[m[32m    background-color: rgb(4, 191, 238);[m
+[32m+[m[32m    color: #445555;[m
+[32m+[m[32m    margin-top: 1rem;[m
+[32m+[m[32m    text-decoration: none;[m
+ }[m
+[31m-[m
+[31m-[m
+ /*icons */[m
+ .iconholster{[m
+     display: flex;[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 85dc1a4..2a0c692 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -31,18 +31,22 @@[m
+ </div>[m
+ <div class="container">[m
+     <ul >[m
+[31m-        <li class="l1"><p>Blender</p><button>more</button></li>[m
+[31m-        <li class="l2"><p>Unity</p><button>more</button></li>[m
+[31m-        <li class="l3"><p>Unreal</p><button>more</button></li>[m
+[32m+[m[32m        <li class="l1"><p>Blender</p><button  id="popblender">more</button></li>[m
+[32m+[m[32m        <li class="l2"><p>Unity</p><button id="pop-unity" onclick="unity()">more</button></li>[m
+[32m+[m[32m        <li class="l3"><p>Unreal</p><button id="pop-unreal" onclick="unreal()">more</button></li>[m
+    </ul>[m
+    <ul>[m
+[31m-    <li class="l4"><p>Flutter</p><button>more</button></li>[m
+[31m-    <li class="l5"><p>Tensor Flow</p><button>more</button></li>[m
+[31m-    <li class="l6"><p>Gimp</p><button>more</button></li>[m
+[32m+[m[32m    <li class="l4"><p>Flutter</p><button id="pop-flutter" onclick="flutter()">more</button></li>[m
+[32m+[m[32m    <li class="l5"><p>Tensor Flow</p><button id="pop-tensor" onclick="tensor()">more</button></li>[m
+[32m+[m[32m    <li class="l6"><p>Gimp</p><button  id="pop-gimp" onclick="gimp()">more</button></li>[m
+ </ul>[m
+ </div>[m
+ </div>[m
+ [m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m<!-- float right -->[m
+ <div class="iconholster">[m
+     <button class="icons" title="add a topic">+</button>[m
+     <button class="icons" title="support">$</button>[m
+[36m@@ -58,47 +62,72 @@[m
+     </div>[m
+ </div>[m
+ [m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m<!-- pop-ups -->[m
+ <div class="infol1">[m
+     <img src="images/blender.jfif">[m
+[31m-    <div><p>blender</p>[m
+[31m-        <p class="desc"></p>[m
+[32m+[m[32m    <div><p class="btitile">blender</p>[m
+[32m+[m[32m        <p class="desc">[m
+[32m+[m[32m            Blender is an open source 3d program that is also free to download and use comercially.[m
+[32m+[m[32m            Blender is writen in python,which is fairly easy to learn and has a script editor.However,[m
+[32m+[m[32m            it requires no programming knowledge at all and most, if not all, of the work is done on the viewport[m[41m [m
+[32m+[m[32m            which lets you see what you are working on.It is a full suite,animation,texturing,riging,modelling,[m
+[32m+[m[32m            sculpting,rendering and many many more.[m
+[32m+[m[32m        </p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killblender">X</button>[m
+ </div>[m
+ [m
+ <div class="infol2">[m
+     <img src="images/unity.jfif">[m
+[31m-    <div><p>unity</p>[m
+[31m-        <p class="desc"></p>[m
+[32m+[m[32m    <div><p class="btitile">unity</p>[m
+[32m+[m[32m        <p class="desc">[m
+[32m+[m[41m            [m
+[32m+[m[32m        </p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killunity">X</button>[m
+ </div>[m
+ [m
+ <div class="infol3">[m
+     <img src="images/unreal.jfif">[m
+[31m-    <div><p>unreal</p>[m
+[32m+[m[32m    <div><p class="btitile">unreal</p>[m
+         <p class="desc"></p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killunreal">X</button>[m
+ </div>[m
+ [m
+ <div class="infol4">[m
+     <img src="images/flutter.png">[m
+[31m-    <div><p>flutter</p>[m
+[32m+[m[32m    <div><p class="btitile">flutter</p>[m
+         <p class="desc"></p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killflutter">X</button>[m
+ </div>[m
+ [m
+ <div class="infol5">[m
+     <img src="images/tensorflow.jfif">[m
+[31m-    <div><p>tensorflow</p>[m
+[32m+[m[32m    <div><p class="btitile">tensorflow</p>[m
+         <p class="desc"></p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killtensor">X</button>[m
+ </div>[m
+ [m
+ <div class="infol6">[m
+     <img src="images/gimp.jfif">[m
+[31m-    <div><p>gimp</p>[m
+[32m+[m[32m    <div><p class="btitile">gimp</p>[m
+         <p class="desc"></p>[m
+[32m+[m[32m        <a href="" class="download">download</a>[m
+     </div>[m
+[32m+[m[32m    <button id="killgimp">X</button>[m
+ </div>[m
+[31m-[m
+[32m+[m[32m<script src="index.js"></script>[m
+ </body>[m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/index.js b/index.js[m
+[1mindex e69de29..5eaf030 100644[m
+[1m--- a/index.js[m
+[1m+++ b/index.js[m
+[36m@@ -0,0 +1,46 @@[m
+[32m+[m[32mlet blender = document.querySelector('.infol1');[m
+[32m+[m[32mlet blenderbtn = document.querySelector('#popblender');[m
+[32m+[m[32mlet unity = document.querySelector('.infol2');[m
+[32m+[m[32mlet unitybtn = document.querySelector('#pop-unity');[m
+[32m+[m[32mlet unreal = document.querySelector('.infol3');[m
+[32m+[m[32mlet unrealbtn = document.querySelector('#pop-unreal');[m
+[32m+[m[32mlet flutter= document.querySelector('.infol4');[m
+[32m+[m[32mlet flutterbtn = document.querySelector('#pop-flutter');[m
+[32m+[m[32mlet tensor = document.querySelector('.infol5');[m
+[32m+[m[32mlet tensorbtn = document.querySelector('#pop-tensor');[m
+[32m+[m[32mlet gimp = document.querySelector('.infol6');[m
+[32m+[m[32mlet gimpbtn = document.querySelector('#pop-gimp');[m
+[32m+[m[32mlet kill =document.querySelector('#kill');[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mblenderbtn.addEventListener('click',() => {[m
+[32m+[m[32m    blender.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32munitybtn.addEventListener('click',() => {[m
+[32m+[m[32m    unity.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32munrealbtn.addEventListener('click',() => {[m
+[32m+[m[32m    unreal.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mflutterbtn.addEventListener('click',() => {[m
+[32m+[m[32m    flutter.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mtensorbtn.addEventListener('click',() => {[m
+[32m+[m[32m    tensor.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mgimpbtn.addEventListener('click',() => {[m
+[32m+[m[32m    gimp.classList.add('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mkillblender.addEventListener('click',()=>{blender.classList.remove('visible');[m[41m  [m
+[32m+[m[32m});[m
+[32m+[m[32mkillunity.addEventListener('click',()=>{unity.classList.remove('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mkillunreal.addEventListener('click',()=>{unreal.classList.remove('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mkillflutter.addEventListener('click',()=>{flutter.classList.remove('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mkilltensor.addEventListener('click',()=>{tensor.classList.remove('visible');[m
+[32m+[m[32m});[m
+[32m+[m[32mkillgimp.addEventListener('click',()=>{gimp.classList.remove('visible');[m
+[32m+[m[32m});[m
+\ No newline at end of file[m

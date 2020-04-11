@@ -31,18 +31,22 @@
 </div>
 <div class="container">
     <ul >
-        <li class="l1"><p>Blender</p><button>more</button></li>
-        <li class="l2"><p>Unity</p><button>more</button></li>
-        <li class="l3"><p>Unreal</p><button>more</button></li>
+        <li class="l1"><p>Blender</p><button  id="popblender">more</button></li>
+        <li class="l2"><p>Unity</p><button id="pop-unity" onclick="unity()">more</button></li>
+        <li class="l3"><p>Unreal</p><button id="pop-unreal" onclick="unreal()">more</button></li>
    </ul>
    <ul>
-    <li class="l4"><p>Flutter</p><button>more</button></li>
-    <li class="l5"><p>Tensor Flow</p><button>more</button></li>
-    <li class="l6"><p>Gimp</p><button>more</button></li>
+    <li class="l4"><p>Flutter</p><button id="pop-flutter" onclick="flutter()">more</button></li>
+    <li class="l5"><p>Tensor Flow</p><button id="pop-tensor" onclick="tensor()">more</button></li>
+    <li class="l6"><p>Gimp</p><button  id="pop-gimp" onclick="gimp()">more</button></li>
 </ul>
 </div>
 </div>
 
+
+
+
+<!-- float right -->
 <div class="iconholster">
     <button class="icons" title="add a topic">+</button>
     <button class="icons" title="support">$</button>
@@ -58,47 +62,72 @@
     </div>
 </div>
 
+
+
+
+
+<!-- pop-ups -->
 <div class="infol1">
     <img src="images/blender.jfif">
-    <div><p>blender</p>
-        <p class="desc"></p>
+    <div><p class="btitile">blender</p>
+        <p class="desc">
+            Blender is an open source 3d program that is also free to download and use comercially.
+            Blender is writen in python,which is fairly easy to learn and has a script editor.However,
+            it requires no programming knowledge at all and most, if not all, of the work is done on the viewport 
+            which lets you see what you are working on.It is a full suite,animation,texturing,riging,modelling,
+            sculpting,rendering and many many more.
+        </p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killblender">X</button>
 </div>
 
 <div class="infol2">
     <img src="images/unity.jfif">
-    <div><p>unity</p>
-        <p class="desc"></p>
+    <div><p class="btitile">unity</p>
+        <p class="desc">
+            
+        </p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killunity">X</button>
 </div>
 
 <div class="infol3">
     <img src="images/unreal.jfif">
-    <div><p>unreal</p>
+    <div><p class="btitile">unreal</p>
         <p class="desc"></p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killunreal">X</button>
 </div>
 
 <div class="infol4">
     <img src="images/flutter.png">
-    <div><p>flutter</p>
+    <div><p class="btitile">flutter</p>
         <p class="desc"></p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killflutter">X</button>
 </div>
 
 <div class="infol5">
     <img src="images/tensorflow.jfif">
-    <div><p>tensorflow</p>
+    <div><p class="btitile">tensorflow</p>
         <p class="desc"></p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killtensor">X</button>
 </div>
 
 <div class="infol6">
     <img src="images/gimp.jfif">
-    <div><p>gimp</p>
+    <div><p class="btitile">gimp</p>
         <p class="desc"></p>
+        <a href="" class="download">download</a>
     </div>
+    <button id="killgimp">X</button>
 </div>
-
+<script src="index.js"></script>
 </body>
 </html>

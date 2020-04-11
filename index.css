@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     font-size: 1.1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva,  sans-serif;
     transition: 0.4s ease;
     object-fit: cover;
     scroll-behavior: smooth;
@@ -232,11 +232,49 @@ html , body{
 .infol1>img,.infol2>img,.infol3>img,
 .infol4>img,.infol5>img,.infol6>img{
     height: 60vh;
-    width: 107vh;
-
+    width: 90vh;
+    object-fit: cover;
+    object-position: center;
 }
-
-
+.infol1>div,.infol2>div,.infol3>div,
+.infol4>div,.infol5>div,.infol6>div{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+.visible{
+    z-index: 13;
+}
+#killblender,#killunity,#killunreal,
+#killflutter,#killtensor,#killgimp{
+    height: 2.2rem;
+    width: 2.2rem;
+    cursor: pointer;
+    border:1px solid #494949;
+    color: #454545;
+    border-radius: .2rem;
+    margin: .3rem;
+}
+.btitile{
+    align-self: flex-start;
+    font-size: 2.2rem;
+    margin-left: 15%;
+}
+.desc{
+    align-self: center;
+    width: 70%;
+    color: #494949;
+}
+.download{
+    padding: .1rem 2rem .3rem 2rem;
+    background-color: rgb(4, 191, 238);
+    color: #445555;
+    margin-top: 1rem;
+    text-decoration: none;
+}
 /*icons */
 .iconholster{
     display: flex;
