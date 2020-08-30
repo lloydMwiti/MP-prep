@@ -7,6 +7,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
     outline: none;
+    transition: .3s ease;
     -webkit-user-select: none;
     -ms-user-select: none;
     -ms-user-select: none;
@@ -21,7 +22,7 @@
     box-sizing: border-box;
 }
 img{
-    image-rendering: crisp-edges;
+    image-rendering: optimizeSpeed;
 }
 a{
     padding: 1rem 1rem;
@@ -132,12 +133,12 @@ header{
 }
 
 /* end of nav and header*/
+
 .body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 88rem;
     width: 100%;
     background-color: white;
     padding: 3.7rem 0rem ;
@@ -229,6 +230,7 @@ header{
     object-position: center;
     object-position: center;
     border-radius: .3rem;
+    image-rendering: optimizeSpeed;
     margin-bottom: .5rem;
 }
 #gallery-images *:hover {
@@ -270,7 +272,10 @@ header{
         margin-left: 1vw;
         width: 98vw;
     }
-    
+    body{
+        width: 100vw;
+        padding: 0dp;
+    }
     .body-top-img{
         padding: 0rem;
         height: fit-content;
@@ -298,5 +303,8 @@ header{
     #gallery-images{
         width: calc(100vw - 5rem);
         height: auto;
+    }
+    .top-img-img{
+        min-height: 1rem;
     }
 }

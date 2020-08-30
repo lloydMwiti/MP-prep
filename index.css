@@ -31,7 +31,7 @@ body::-webkit-scrollbar{
 }
 
 img{
-    image-rendering: crisp-edges;
+    image-rendering: optimizeSpeed;
 }
 a{
     outline: none;
@@ -289,6 +289,7 @@ html , body{
     font-weight: normal;
     font-size: 2.5rem;
     color: #0b37fc;
+    text-align: center;
     text-transform: uppercase;
 }
 .rtl-word-content p{
@@ -298,9 +299,10 @@ html , body{
     color: inherit;
 }
 .rtl-image-content{
-    height: 17rem;
+    min-height: 17rem;
+    height: fit-content;
     margin: 1rem .5rem;
-    width: 17rem;
+    width: calc(32% - 1rem);
     border-radius: .4rem;
     background-color: #ffffff;
     display: flex;
@@ -473,8 +475,14 @@ html , body{
 /* individual graph indicator widths  */
 .bg-html{width: 87%;}
 .bg-css{width: 94%;}
-.bg-js{width: 78%;}
-.bg-spark{width: 70%;}
+.bg-js{width: 74%;}
+.bg-spark{width: 64%;}
+
+.bg-pd{width: 84%; background-color: rgb(196, 0, 59)}
+.bg-ce{width: 79%; background-color: rgb(196, 0, 59)}
+.bg-java{width: 74%; background-color: rgb(196, 0, 59)}
+.bg-ax{width: 90%; background-color: rgb(196, 0, 59)}
+.bg-anim{width: 88%; background-color: rgb(196, 0, 59)}
 /* end of graph widths */
 /*icons */
 .iconholster{
@@ -530,5 +538,16 @@ html , body{
     }
     .nav-list{
         display: none;
+    }
+    .rtl-image-content,.ltr-image-content{
+        width: 100%;
+        padding: none ;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .rtl-content ,.ltr-content{
+        padding: 0 .5rem;
+        width: 100vw;
+        margin: 0;
     }
 }

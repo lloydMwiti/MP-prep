@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+    outline: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    transition: .35s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -ms-transition:.3s ease;
+    scroll-behavior: smooth;  
+    font-size: 1rem;
+    cursor: default;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+    height: 0px;
+    padding: 0;
+}
+
+img{
+    image-rendering: optimizeSpeed;
+}
+a{
+    outline: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    color: currentColor;
+}
+html , body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+.nav{
+    background-color: white;
+    width: calc(100vw - 2rem);
+    margin-top: .4rem;
+    border-radius: .5rem;
+    margin-left: 1rem;
+    position: fixed;
+    padding: .0rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    height: 3.2rem;
+    font-size: 1rem;
+    box-shadow:  0 0 .6rem -.14rem rgb(62, 86, 95);
+}
+.web-title{
+    color: #15191b;
+    font-weight: 500;
+    font-size: 1.4rem;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-touch-user-select:none ;
+}
+.nav-list{
+    display: flex;
+    width: 21rem;
+    min-width: 15rem;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;   
+}
+.nav-list-items{
+    transition: .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76%;
+    padding: 0rem 1.3rem 0.05rem 1.3rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background-color: white;
+}
+.nav-list-items:hover{
+    transition: background-color .3s ease-in-out;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+}
+.nav-list-items:nth-child(3){
+    background: #202020;
+    color: white;
+    border-radius: 2rem;
+}
+.nav-btn-login{
+    transition: background-color 0s;
+    transition: 0.35s ease-in-out;
+    outline: none;
+    -webkit-outline:none;
+    padding: .1rem 1.2rem .3rem 1.2rem;
+    border:none;
+   color: rgb(248, 248, 248);
+    border-radius: .2rem;
+    font-size: 1.2rem;
+    background:#202020;
+    box-shadow: 0rem .26rem .4rem -.2rem rgb(43, 1, 92);
+}
+.nav-btn-login:hover{
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    color: #0091ea;
+    background:#3f3f3f;
+    
+}
+.nav-btn-login:active{
+    transition: 0s;
+    background-color: white;
+}
+
+
+.body{
+    padding-top: 3.6rem;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.w-100{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 1rem 0;
+    margin-bottom: 4rem;
+}
+.w-100 h1{
+    font-size: 2.4rem;
+    font-weight: normal;
+}
+.w-100 p{
+    font-size:1.2rem ;
+    color: #202020;
+    text-align: center;
+    width: calc(50% - 2rem);
+
+}
+.center{
+}
+.container{
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 60%;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+}
+.item-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: .4rem;
+    max-width: calc(20% - .4rem);
+    min-width: 8rem;
+    width: 8rem;
+    margin: .4rem .1rem ;
+    height: 8rem;
+    border-radius: .5rem;
+    background-color: #e7e7e7;
+}
+.item-card:hover{
+    box-shadow: 0 .1rem .5rem -.15rem rgb(67, 77, 87);
+}
+.item-card > h5{
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #003fec;
+    text-transform: capitalize;
+
+}
+@media screen and (orientation:portrait){
+    .nav-list{
+        display: none;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        padding-top: 3.6rem;
+    }
+    .item-card{
+        width: calc(50vw - .8rem);
+        min-width: 0;
+        max-width: 100%;
+    }
+}
