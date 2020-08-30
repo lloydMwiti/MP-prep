@@ -8,62 +8,123 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <!-- navbar start -->
     <nav class="nav">
-        <div class="navleft">
-            <div class="navlogo">
-                Label
-            </div>
-        </div>
-        <div class="navcenter">
-            <a data-target=".body"><button class="navlinks">Home</button></a>
-            <button class="navlinks">Notification</button>
-            <button class="navlinks">social</button>
-           
-        </div>
-        <div class="navright">
-            <button class="navlinksettings"><img src="images/acoount.jpg" alt="you" class="account-logo">
-            </button>
-        </div></div>
+        <a class="web-title" href="index.html">About Me</a>
+        <ul class="nav-list">
+            <li class="nav-list-items" ><a class="nav-list-itemsc" href="index.html">Home</a></li>
+           <li class="nav-list-items" > <a class="nav-list-itemsc" href="gallery.html">Gallery</a></li>
+            <li class="nav-list-items"><a class="nav-list-itemsc" href="gallery.html">Downloads</a></li>
+        </ul>
+    <a class="nav-btn-login" href="accounts.html" title="create or login to an account">Signup</a>
     </nav>
+    <!-- navbar ending  -->
+
 
 <div class="body">
 <div class="imagetop">
 </div>
+
 <div class="container">
-    <ul >
+    <!-- ltr -->
+    <div class="ltr-container">
+        <div class="ltr-word-content">
+            <h2>about me :</h2>
+            <p>My name is Lloyd Mwiti,22 years old.I am ,and always have been ,passionate for 
+                creation from programming to artisitc works to computer building and assembly.
+                here is a list of some of my overall skills. 
+            </p>
+        </div>
+
+        <div class="ltr-image-content">
+            <img class="my-profile" src="images/myprofile.jpg">
+        </div>
+    </div>
+    <!-- end ltr start rtl  -->
+    <!-- start rtl -->
+    <div class="rtl-container">
+        <div class="rtl-word-content">
+            <h2>WebDesign</h2>
+            <p>to the left is an estimation of my skills 
+                as a website designer / creator .Each
+                language comes with a graph guaging my level 
+                of skill,though i am not perfect and intend 
+                to continue developing my skills,both as an 
+                individual and as part of a team.
+            </p>
+        </div>
+        <div class="rtl-image-content">
+            <!-- html graph -->
+            <div class="bargraph">
+                <p class="bg-title">html</p>
+                <div class="bg-holder">
+                    <div class="bg-indicator bg-html"></div>
+                </div>
+            </div>
+            <!-- html graph -->
+            <div class="bargraph">
+                <p class="bg-title">css</p>
+                <div class="bg-holder">
+                    <div class="bg-indicator bg-css"></div>
+                </div>
+            </div>
+
+            <!-- html graph -->
+            <div class="bargraph">
+                <p class="bg-title">java script</p>
+                <div class="bg-holder">
+                    <div class="bg-indicator bg-js"></div>
+                </div>
+            </div>
+
+            <!-- html graph -->
+            <div class="bargraph">
+                <p class="bg-title">Angular</p>
+                <div class="bg-holder">
+                    <div class="bg-indicator bg-js"></div>
+                </div>
+            </div>
+
+            <!-- html graph -->
+            <div class="bargraph">
+                <p class="bg-title">spark</p>
+                <div class="bg-holder">
+                    <div class="bg-indicator bg-spark"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end rtl -->
+    <ul>
         <li class="l1"><p>Blender</p><button  id="popblender">more</button></li>
         <li class="l2"><p>Unity</p><button id="pop-unity" onclick="unity()">more</button></li>
         <li class="l3"><p>Unreal</p><button id="pop-unreal" onclick="unreal()">more</button></li>
-   </ul>
-   <ul>
-    <li class="l4"><p>Flutter</p><button id="pop-flutter" onclick="flutter()">more</button></li>
-    <li class="l5"><p>Tensor Flow</p><button id="pop-tensor" onclick="tensor()">more</button></li>
-    <li class="l6"><p>Gimp</p><button  id="pop-gimp" onclick="gimp()">more</button></li>
-</ul>
+        <li class="l4"><p>Flutter</p><button id="pop-flutter" onclick="flutter()">more</button></li>
+        <li class="l5"><p>Tensor Flow</p><button id="pop-tensor" onclick="tensor()">more</button></li>
+        <li class="l6"><p>Gimp</p><button  id="pop-gimp" onclick="gimp()">more</button></li>
+    </ul>
 </div>
 </div>
-
-
 
 
 <!-- float right -->
 <div class="iconholster">
-    <button class="icons" title="add a topic">+</button>
-    <button class="icons" title="support">$</button>
-    <button class="icons" title="get our news letter">#</button>
-    <button class="icons" title="">@</button>
+    <a href="index.html" title="add a topic"><img class="icons" src="images/round_home_black_18dp.png"></a>
+    <a href="gallery.html" title="support"><img class="icons" src="images/round_motion_photos_on_black_18dp.png"></a>
+    <a href="downloads.html" title="get our news letter"><img class="icons" src="images/round_get_app_black_18dp.png"></a>
+    
 </div>
 
 <div class="text-box">
     <div>
-        <p class="topic">Learners Advise</p>
-        <p class="topic2">Here's a list of things you can learn if youre a software developer,or a student in IT.Or just stuck at home bored.</p>
+        <p class="topic">LLOYD MWITI</p>
+        <p class="topic2">Hello , my name is lloyd mwiti, a novice developer with a few skills that you will see below</p>
         <p><button class="next">scroll down to see more</button></p>
     </div>
 </div>
-
-
-
 
 
 <!-- pop-ups -->
